@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="mt-5 d-flex justify-content-center d-flex justify-content-around col-6 m-4">
+        <table class="table table-bordered">
+            <tr>
+                <th scope="col">Tirada</th>
+                <th scope="col">Color obtingut</th>
+            </tr>
+            <tr id="color"> 
+            </tr>
+            
+        </table>
+        <div class="col-6 justify-content-center">
+            <h4>Total de Tiradas: </h2><p id="totalTiradas"></p>
+                
+        </div>
+        <br>
+    </div>
+    <div class="mt-5 d-flex justify-content-center  col-8 m-4">
+        <button onclick="chooseColor()" type="button" class="btn btn-primary btn-lg">Prem aquí</button>
+    </div>
+</body>
+<script>
+    var a = 0;
+    function chooseColor() {   
+     var myArray = ['Blau', 'Grog', 'Vermell','Blau','Grog'];
+     var rand = Math.floor(Math.random()*myArray.length);
+     var rValue = myArray[rand];
+     var td= document.createElement("td");
+     var tr= document.createElement("tr");
+     td.innerHTML= rValue;
+     document.getElementById('color').appendChild(tr).appendChild(td);
+     a = a + 1;
+     document.getElementById("totalTiradas").innerHTML = a;
+    }
+</script> 
+</html>
